@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import modelo.Cliente;
 import javax.swing.JOptionPane;
 import java.io.*;
+import modelo.Utilidades;
 
 /**
  *
@@ -242,10 +243,14 @@ public class UICliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // archivo de textos 
+        // archivo de textos
         
-        
-        
+        boolean t= Utilidades.guardarArchivo(listaCliente);
+        if (t==true) {
+            JOptionPane.showMessageDialog(rootPane, "Datos guardados");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Fue imposible guardar los archivos.");
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
